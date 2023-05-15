@@ -1,0 +1,65 @@
+# 读取 CSV 文件
+chunksize: 1000
+# 手动指定列名
+columns:
+  - 'CELLID'
+  - 'TIMESTAMP'
+  - 'TRAFFIC'
+daily_data_columns:
+  - 'CELLID'
+  - 'TRAFFIC'
+data_path: 'data'
+raw_file_path: 'data/raw'
+processed_data_path: 'data/processed'
+minutely_data_path: 'data/minutely'
+daily_data_path: 'data/daily'
+animation_frame_path: 'data/animation_frame'
+the_three_area_data_fullpath: 'data/the_three_area_data.csv'
+
+analysis_path: 'analysis'
+animation_final_fullpath: 'analysis/animation.gif'
+
+filename_date_reg: '\d{4}\-\d{2}\-\d{2}'
+bin_list:
+  - 20
+  - 30
+  - 40
+  - 50
+entropy_fullpath: 'analysis/entropy.pdf'
+distribution_fullpath: 'analysis/distribution.pdf'
+FirstTwoWeeksFlow_fullpath: 'analysis/first_two_weeks.pdf'
+pred_result_fullpath: 'analysis/pred_result_%s.pdf'
+cellIdList:
+  - 5161
+  - 4159
+  - 4556
+test_start_date: '2013-12-16'
+test_end_date: '2013-12-22'
+test_start_timestamp: '1387148400000'
+
+
+#raw_data_prefix: 'sms-call-internet-mi-'
+#processed_data_prefix: 'processed.'
+#minutely_data_prefix: 'minutely.'
+#daily_data_prefix: 'daily.'
+
+# Training params
+num_epochs: 20
+batchSize: 16
+kernel_size: 3
+windowSize:
+  - 144
+  - 288
+  - 432
+  - 1008
+  - 2016
+#  - 3024
+lr: 0.001
+outputSize: 1008
+num_channels:
+  - 64
+  - 64
+  - 64
+  - 64
+
+model_fullpath: 'data/model.pt'
